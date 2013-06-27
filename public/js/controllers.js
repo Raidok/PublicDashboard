@@ -17,11 +17,12 @@ angular.module('myApp.controllers', []).
     });
 
   }).
-  controller('MyCtrl1', function ($scope) {
-    // write Ctrl here
-
+  controller('DashboardCtrl', function ($scope, socket) {
+    socket.on('send:time', function (data) {
+      $scope.time = data.time;
+    });
   }).
-  controller('MyCtrl2', function ($scope) {
+  controller('RemoteCtrl', function ($scope) {
     // write Ctrl here
 
   });
