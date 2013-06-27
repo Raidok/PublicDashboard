@@ -5,14 +5,14 @@ block body
     h2 Hello {{name}}
     ul.menu
       li
-        a(href='view1') view1
+        a(href='dash') Dashboard
       li
-        a(href='view2') view2
+        a(href='remote') Remote
 
     div(ng-view)
 
-    div
-      | Angular seed app: v
+    div.footer
+      | PublicDashboard: v
       span(app-version)
 
   script(src='js/lib/angular/angular.js')
