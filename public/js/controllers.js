@@ -18,11 +18,19 @@ angular.module('myApp.controllers', []).
 
   }).
   controller('DashboardCtrl', function ($scope, socket) {
-    socket.on('send:time', function (data) {
-      $scope.time = data.time;
+    $scope.msg = ":(";
+    socket.on('bc:msg', function (data) {
+      $scope.msg = data.msg;
     });
   }).
-  controller('RemoteCtrl', function ($scope) {
-    // write Ctrl here
-
+  controller('RemoteCtrl', function ($scope, socket) {
+    socket.on('bc:msg', function (data) {
+      $scope.alerts = data.msg;
+    });
+    $scope.send = function() {
+      console.log($scope.message);
+      socket.emit('msg:send', {
+        msg: $scope.message
+      });
+    }
   });
