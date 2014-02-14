@@ -1,2 +1,2 @@
-p {{msg}}
-p This is the partial for view 1.
+div(class='panel-group', id='accordion', messages='messages')
+  message(ng-repeat='msg in messages', data='msg')

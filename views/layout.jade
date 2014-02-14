@@ -3,7 +3,8 @@ html(ng-app="myApp")
   head
     meta(charset='utf8')
     base(href='/')
-    title Angular Express Seed App
+    title Dashboard
+    link(href='css/bootstrap.min.css', rel='stylesheet')
     link(rel='stylesheet', href='/css/app.css')
-  body
+  body(ng-controller='AppCtrl', class='container')
     block body

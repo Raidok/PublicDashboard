@@ -13,16 +13,14 @@ angular.module('myApp', [
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.
-    when('/dash', {
-      templateUrl: 'partials/dash',
-      controller: 'DashboardCtrl'
+    when('/', {
+      templateUrl: 'partials/dash'
     }).
     when('/remote', {
-      templateUrl: 'partials/remote',
-      controller: 'RemoteCtrl'
+      templateUrl: 'partials/remote'
     }).
     otherwise({
-      redirectTo: '/dash'
+      redirectTo: '/'
     });
 
   $locationProvider.html5Mode(true);

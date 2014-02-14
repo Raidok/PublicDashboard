@@ -1,12 +1,7 @@
-h1 {{alerts}}
-
-p Write a message:
-  
-
-  input(type="text", ng-model="message")
-  {{message}}
-  input(type="button", value="Saada", ng-click="send()")
-
-p
-  | Showing of 'interpolate' filter:
-  | {{ 'Current version is v%VERSION%.' | interpolate }}
+form
+  div(class='form-group')
+    input(type='text', class='form-control', ng-model='msg.title', placeholder='Title')
+  div(class='form-group')
+    textarea(class='form-control', ng-model='msg.content', placeholder='Content')
+  div(class='form-group')
+    input(type='button', class='btn btn-default', value='Send', ng-click='send()')

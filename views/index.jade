@@ -1,19 +1,7 @@
 extends layout
 
 block body
-  div(ng-controller='AppCtrl')
-    h2 Hello {{name}}
-    ul.menu
-      li
-        a(href='dash') Dashboard
-      li
-        a(href='remote') Remote
-
-    div(ng-view)
-
-    div.footer
-      | PublicDashboard: v
-      span(app-version)
+  div(ng-view)
 
   script(src='/socket.io/socket.io.js')
   script(src='js/lib/angular/angular.js')
@@ -23,3 +11,5 @@ block body
   script(src='js/controllers.js')
   script(src='js/filters.js')
   script(src='js/directives.js')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+  script(src='js/lib/bootstrap/bootstrap.min.js')
