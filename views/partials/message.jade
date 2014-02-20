@@ -1,9 +1,9 @@
-div(class='panel panel-default {{data.type}}')
+div(class='panel{{data.type}}')
   div(class='panel-heading')
     h4(class='panel-title')
-      a(data-toggle='collapse', data-parent='#accordion', href='#collapse{{data.i}}', onclick='return false')
+      a(href='javascript:', ng-click='$parent.$parent.sel=data.id')
         {{data.title}}
         !!! button(type='button', class='close', data-dismiss='panel') &times;
-  div(id='collapse{{data.i}}', class='panel-collapse collapse')
+  div(ng-show='$parent.sel==data.id')
     div(class='panel-body')
       {{data.content}}

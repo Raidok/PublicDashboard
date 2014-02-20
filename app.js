@@ -26,6 +26,7 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
+io.set('log level', 2);
 
 // development only
 if (app.get('env') === 'development') {
